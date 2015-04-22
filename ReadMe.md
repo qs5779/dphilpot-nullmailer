@@ -1,3 +1,9 @@
+Travis Build Status
+===================
+
+MASTER: [![Build Status](https://travis-ci.org/dphilpot/dphilpot-nullmailer.svg?branch=master)](https://travis-ci.org/dphilpot/dphilpot-nullmailer)
+DEVELOP: [![Build Status](https://travis-ci.org/dphilpot/dphilpot-nullmailer.svg?branch=develop)](https://travis-ci.org/dphilpot/dphilpot-nullmailer)
+
 Puppet module for nullmailer
 ============================
 
