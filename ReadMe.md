@@ -8,6 +8,7 @@ Multiple remote SMTP server can be handled by nullmailer via IP or Hostname.
 Basic usage
 -----------
 
+`
 class {'nullmailer':
   adminaddr      => 'root@example.com',
   defaultdomain  => 'example.com',
@@ -16,6 +17,7 @@ class {'nullmailer':
   package_ensure => 'latest',
   package_name   => 'nullmailer',
 }
+`
 
 Advanced usage
 --------------
@@ -26,18 +28,22 @@ Hiera example:
 
 In the puppet node-file you need to insert just:
 
+`
   include nullmailer
+`
 
 In the hiera-file you need to insert something like this:
 
-nullmailer::adminaddr:      'toor@example.com'
-nullmailer::defaultdomain:  'example.com'
-nullmailer::me:             'test.example.com'
-nullmailer::package_ensure: 'latest'
-nullmailer::package_name:   'nullmailer'
-nullmailer::remotes:
-  - one.example.com
-  - 127.0.0.2
+`
+  nullmailer::adminaddr:      'toor@example.com'
+  nullmailer::defaultdomain:  'example.com'
+  nullmailer::me:             'test.example.com'
+  nullmailer::package_ensure: 'latest'
+  nullmailer::package_name:   'nullmailer'
+  nullmailer::remotes:
+    - one.example.com
+    - 127.0.0.2
+`
 
 Notes
 -----
@@ -53,3 +59,5 @@ Contributors
 
 Copyright and License
 ---------------------
+
+GNU GENERAL PUBLIC LICENSE Version 2
