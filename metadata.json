@@ -1,0 +1,38 @@
+{
+  "name": "dphilpot-nullmailer",
+  "version": "0.0.2",
+  "author": "Dennis Philpot",
+  "summary": "Install, configure and manage nullmailer.",
+  "license": "GNU GENERAL PUBLIC LICENSE Version 2",
+  "source": "https://github.com/dphilpot/dphilpot-nullmailer",
+  "project_page": "https://github.com/dphilpot/dphilpot-nullmailer/",
+  "issues_url": "https://github.com/dphilpot/dphilpot-nullmailer/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "description": "Install, configure and manage nullmailer as a mail relay.",
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 4.5.1"}
+  ]
+}
