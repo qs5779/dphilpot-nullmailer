@@ -1,0 +1,10 @@
+name          'dphilpot-nullmailer'
+version       '0.0.1'
+source        'https://github.com/dphilpot/dphilpot-nullmailer'
+author        'Dennis Philpot'
+license       'GNU GENERAL PUBLIC LICENSE Version 2'
+summary       'Install, configure and manage nullmailer'
+description   'Install, configure and manage nullmailer as a mail relay.'
+project_page  'https://github.com/dphilpot/dphilpot-nullmailer'
+
+dependency 'puppetlabs/stdlib', '>= 4.5.1'
