@@ -1,5 +1,5 @@
 name          'dphilpot-nullmailer'
-version       '0.0.1'
+version       '0.0.3'
 source        'https://github.com/dphilpot/dphilpot-nullmailer'
 author        'Dennis Philpot'
 license       'GPL-2.0'

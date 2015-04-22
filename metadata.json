@@ -1,6 +1,6 @@
 {
   "name": "dphilpot-nullmailer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Dennis Philpot",
   "summary": "Install, configure and manage nullmailer.",
   "license": "GPL-2.0",
