@@ -17,7 +17,7 @@ class nullmailer (
   validate_array($remotes)
   validate_string($me)
 
-  include nullmailer::install
-  include nullmailer::config
-  include nullmailer::service
+  include ::nullmailer::install
+  include ::nullmailer::config
+  include ::nullmailer::service
 }

@@ -8,13 +8,13 @@ class nullmailer::config () inherits nullmailer {
   File {
     ensure  => 'present',
     mode    => '0644',
-    owner   => root,
-    group   => root,
-    require    => Class['nullmailer::install'],
+    owner   => 'root',
+    group   => 'root',
+    require => Class['nullmailer::install'],
   }
 
   file { '/etc/nullmailer':
-      ensure => 'directory',
+    ensure => 'directory',
   }
 
   file {
