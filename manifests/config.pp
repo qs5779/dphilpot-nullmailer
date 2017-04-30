@@ -19,16 +19,23 @@ class nullmailer::config (
     ensure => 'directory',
   }
 
-  file {
-    '/etc/nullmailer/me':
-      content => "${me}\n";
-    '/etc/nullmailer/adminaddr':
-      content => "${adminaddr}\n";
-    '/etc/nullmailer/defaultdomain':
-      content => "${defaultdomain}\n";
-    '/etc/nullmailer/remotes':
-      content => template('nullmailer/remotes.erb');
-    '/etc/mailname':
-      content => "${defaultdomain}\n";
+  file { '/etc/nullmailer/me':
+    content => "${me}\n",
+  }
+
+  file { '/etc/nullmailer/adminaddr':
+    content => "${adminaddr}\n",
+  }
+
+  file { '/etc/nullmailer/defaultdomain':
+    content => "${defaultdomain}\n";
+  }
+
+  file { '/etc/nullmailer/remotes':
+    content => template('nullmailer/remotes.erb');
+  }
+
+  file { '/etc/mailname':
+    content => "${defaultdomain}\n";
   }
 }
