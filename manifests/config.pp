@@ -9,18 +9,24 @@ class nullmailer::config (
   $me = $::nullmailer::me,
 ) {
   File {
-    ensure  => 'present',
-    mode    => '0644',
-    owner   => 'root',
-    group   => 'root',
+    ensure => 'file',
+    mode   => '0644',
+    owner  => 'root',
+    group  => 'root',
   }
 
   file { '/etc/nullmailer':
     ensure => 'directory',
   }
 
-  file { '/etc/nullmailer/me':
-    content => "${me}\n",
+  if $me and $me != '' {
+    file { '/etc/nullmailer/me':
+      content => "${me}\n",
+    }
+  } else {
+    file { '/etc/nullmailer/me':
+      ensure => 'absent',
+    }
   }
 
   file { '/etc/nullmailer/adminaddr':

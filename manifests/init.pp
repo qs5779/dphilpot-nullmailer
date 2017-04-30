@@ -3,10 +3,10 @@
 # Copyright Dennis Philpot
 #
 class nullmailer (
-  Pattern['[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]'] $adminaddr,
   Array[String] $remotes,
+  String $adminaddr = '',
   String $defaultdomain = $::domain,
-  String $me = $::hostname,
+  Optional[String] $me = undef,
   Optional[String] $package_ensure = undef,
   String $package_name  = 'nullmailer',
 ) {

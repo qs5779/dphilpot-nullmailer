@@ -3,8 +3,7 @@ require 'spec_helper'
 describe 'nullmailer' do
   let :params do
     {
-      'adminaddr' => 'root@localhost',
-      'remotes'   => ['127.0.0.1',],
+      'remotes' => ['127.0.0.1'],
     }
   end
 
