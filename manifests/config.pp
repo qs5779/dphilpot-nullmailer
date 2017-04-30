@@ -19,14 +19,14 @@ class nullmailer::config () inherits nullmailer {
 
   file {
     '/etc/nullmailer/me':
-      content => template('nullmailer/me.erb');
+      content => "${me}\n";
     '/etc/nullmailer/adminaddr':
-      content => template('nullmailer/adminaddr.erb');
+      content => "${adminaddr}\n";
     '/etc/nullmailer/defaultdomain':
-      content => template('nullmailer/defaultdomain.erb');
+      content => "${defaultdomain}\n";
     '/etc/nullmailer/remotes':
       content => template('nullmailer/remotes.erb');
     '/etc/mailname':
-      content => template('nullmailer/mailname.erb');
+      content => "${defaultdomain}\n";
   }
 }
