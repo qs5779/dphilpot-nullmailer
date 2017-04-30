@@ -10,8 +10,6 @@ class nullmailer (
   $package_ensure = undef,
   $package_name   = 'nullmailer',
 ) {
-  contain stdlib
-
   validate_re($adminaddr, '[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]', 'Invalid E-Mail address')
   validate_string($defaultdomain)
   validate_array($remotes)
