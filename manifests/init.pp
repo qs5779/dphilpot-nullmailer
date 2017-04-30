@@ -10,7 +10,9 @@ class nullmailer (
   Optional[String] $package_ensure = undef,
   String $package_name  = 'nullmailer',
 ) {
-  include ::nullmailer::install
-  include ::nullmailer::config
-  include ::nullmailer::service
+  contain ::nullmailer::install
+  contain ::nullmailer::config
+  contain ::nullmailer::service
+
+  Class['nullmailer::install'] -> Class['nullmailer::config'] ~> Class['nullmailer::service']
 }

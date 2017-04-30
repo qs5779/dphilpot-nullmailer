@@ -2,15 +2,17 @@
 #
 # Copyright Dennis Philpot
 #
-class nullmailer::config () inherits nullmailer {
-  contain nullmailer::install
-
+class nullmailer::config (
+  $adminaddr = $::nullmailer::adminaddr,
+  $defaultdomain = $::nullmailer::defaultdomain,
+  $remotes = $::nullmailer::remotes,
+  $me = $::nullmailer::me,
+) {
   File {
     ensure  => 'present',
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
-    require => Class['nullmailer::install'],
   }
 
   file { '/etc/nullmailer':
