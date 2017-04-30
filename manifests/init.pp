@@ -4,8 +4,8 @@
 #
 class nullmailer (
   Pattern['[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]'] $adminaddr,
-  String $defaultdomain,
   Array[String] $remotes,
+  String $defaultdomain = $::domain,
   String $me = $::hostname,
   Optional[String] $package_ensure = undef,
   String $package_name  = 'nullmailer',

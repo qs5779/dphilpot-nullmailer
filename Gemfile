@@ -1,18 +1,6 @@
 source 'https://rubygems.org'
 
-if ENV.key?('PUPPET_VERSION')
-  puppetversion = "= #{ENV['PUPPET_VERSION']}"
-else
-  puppetversion = ['>= 2.7']
-end
-
+gem 'metadata-json-lint'
+gem 'puppet', ENV.key?('PUPPET_VERSION') ? "~> #{ENV['PUPPET_VERSION']}" : '>= 4.6'
+gem 'puppetlabs_spec_helper', '>= 2.1.1'
 gem 'rake'
-gem 'bundler'
-gem 'bundle'
-gem 'puppet-lint'
-gem 'rspec', '< 3.0.0'
-gem 'rspec-puppet'
-gem 'puppetlabs_spec_helper'
-gem 'puppet', puppetversion
-gem "ci_reporter_rspec"
-
