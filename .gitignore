@@ -1,3 +1,2 @@
-!.gitignore
-spec/reports/*
-spec/fixtures/*
+Gemfile.lock
+spec/fixtures/

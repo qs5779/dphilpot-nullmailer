@@ -2,14 +2,9 @@
 #
 # Copyright Dennis Philpot
 #
-class nullmailer::service () inherits nullmailer {
-  contain nullmailer::config
-
+class nullmailer::service {
   service { 'nullmailer':
-    ensure     => running,
-    enable     => true,
-    hasstatus  => true,
-    hasrestart => true,
-    require    => Class['nullmailer::config'],
+    ensure => running,
+    enable => true,
   }
 }

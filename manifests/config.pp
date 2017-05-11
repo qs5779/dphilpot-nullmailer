@@ -2,31 +2,46 @@
 #
 # Copyright Dennis Philpot
 #
-class nullmailer::config () inherits nullmailer {
-  contain nullmailer::install
-
+class nullmailer::config (
+  $adminaddr = $::nullmailer::adminaddr,
+  $defaultdomain = $::nullmailer::defaultdomain,
+  $remotes = $::nullmailer::remotes,
+  $me = $::nullmailer::me,
+) {
   File {
-    ensure  => 'present',
-    mode    => '0644',
-    owner   => root,
-    group   => root,
-    require    => Class['nullmailer::install'],
+    ensure => 'file',
+    mode   => '0644',
+    owner  => 'root',
+    group  => 'root',
   }
 
   file { '/etc/nullmailer':
-      ensure => 'directory',
+    ensure => 'directory',
   }
 
-  file {
-    '/etc/nullmailer/me':
-      content => template('nullmailer/me.erb');
-    '/etc/nullmailer/adminaddr':
-      content => template('nullmailer/adminaddr.erb');
-    '/etc/nullmailer/defaultdomain':
-      content => template('nullmailer/defaultdomain.erb');
-    '/etc/nullmailer/remotes':
-      content => template('nullmailer/remotes.erb');
-    '/etc/mailname':
-      content => template('nullmailer/mailname.erb');
+  if $me and $me != '' {
+    file { '/etc/nullmailer/me':
+      content => "${me}\n",
+    }
+  } else {
+    file { '/etc/nullmailer/me':
+      ensure => 'absent',
+    }
+  }
+
+  file { '/etc/nullmailer/adminaddr':
+    content => "${adminaddr}\n",
+  }
+
+  file { '/etc/nullmailer/defaultdomain':
+    content => "${defaultdomain}\n";
+  }
+
+  file { '/etc/nullmailer/remotes':
+    content => template('nullmailer/remotes.erb');
+  }
+
+  file { '/etc/mailname':
+    content => "${defaultdomain}\n";
   }
 }
