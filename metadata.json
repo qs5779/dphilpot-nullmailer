@@ -7,6 +7,9 @@
   "source": "https://github.com/dphilpot/dphilpot-nullmailer",
   "project_page": "https://github.com/dphilpot/dphilpot-nullmailer/",
   "issues_url": "https://github.com/dphilpot/dphilpot-nullmailer/issues",
+  "dependencies": [
+
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian",
@@ -33,5 +36,7 @@
       "version_requirement": ">= 4.6.1"
     }
   ],
-  "dependencies": []
+  "pdk-version": "1.14.1",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#master",
+  "template-ref": "heads/master-0-gfaf9e8b"
 }
