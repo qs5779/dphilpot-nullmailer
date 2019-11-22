@@ -8,6 +8,7 @@ class nullmailer (
   String $defaultdomain = $::domain,
   Optional[String] $me = undef,
   Optional[String] $package_ensure = undef,
+  Optional[String] $allmailfrom = undef,
   String $package_name  = 'nullmailer',
 ) {
   contain ::nullmailer::install
