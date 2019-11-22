@@ -40,7 +40,6 @@ matrix:
 branches:
   only:
     - master
-    - pdk
     - /^v\d/
 notifications:
   email: false
