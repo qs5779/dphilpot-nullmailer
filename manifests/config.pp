@@ -3,6 +3,7 @@
 # Copyright Dennis Philpot
 #
 class nullmailer::config (
+  $allmailfrom = $::nullmailer::allmailfrom,
   $adminaddr = $::nullmailer::adminaddr,
   $defaultdomain = $::nullmailer::defaultdomain,
   $remotes = $::nullmailer::remotes,
@@ -43,5 +44,15 @@ class nullmailer::config (
 
   file { '/etc/mailname':
     content => "${defaultdomain}\n";
+  }
+
+  if $allmailfrom and $allmailfrom != '' {
+    file { '/etc/nullmailer/allmailfrom':
+      content => "${allmailfrom}\n",
+    }
+  } else {
+    file { '/etc/nullmailer/allmailfrom':
+      ensure => 'absent',
+    }
   }
 }
