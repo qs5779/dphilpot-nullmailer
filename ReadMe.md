@@ -17,6 +17,7 @@ Basic usage
     class {'nullmailer':
       adminaddr      => 'root@example.com',
       defaultdomain  => 'example.com',
+      defaultdomain  => 'somemail@example.com',
       remotes        => ['one.example.com', '127.0.0.2'],
       me             => 'test.domain.example.com',
       package_ensure => 'latest',
@@ -38,6 +39,7 @@ In the hiera-file you need to insert something like this:
 
     nullmailer::adminaddr:      'toor@example.com'
     nullmailer::defaultdomain:  'example.com'
+    nullmailer::allmailfrom:    'somemail@example.com'
     nullmailer::me:             'test.example.com'
     nullmailer::package_ensure: 'latest'
     nullmailer::package_name:   'nullmailer'
