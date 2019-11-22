@@ -16,6 +16,7 @@ Basic usage
 
     class {'nullmailer':
       adminaddr      => 'root@example.com',
+      allfrommail    => 'somemail@example.com',
       defaultdomain  => 'example.com',
       remotes        => ['one.example.com', '127.0.0.2'],
       me             => 'test.domain.example.com',
@@ -37,6 +38,7 @@ In the puppet node-file you need to insert just:
 In the hiera-file you need to insert something like this:
 
     nullmailer::adminaddr:      'toor@example.com'
+    nullmailer::allfrommail:    'somemail@example.com'
     nullmailer::defaultdomain:  'example.com'
     nullmailer::me:             'test.example.com'
     nullmailer::package_ensure: 'latest'
