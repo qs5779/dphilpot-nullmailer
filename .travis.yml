@@ -40,7 +40,6 @@ matrix:
 branches:
   only:
     - master
-    - verify
     - /^v\d/
 notifications:
   email: false
