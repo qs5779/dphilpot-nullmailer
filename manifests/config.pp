@@ -2,12 +2,16 @@
 #
 # Copyright Dennis Philpot
 #
+# @param servicegroup
+#   when not nil or empty string affects onwership/permission of config file remotes
+#
 class nullmailer::config (
   $allmailfrom = $::nullmailer::allmailfrom,
   $adminaddr = $::nullmailer::adminaddr,
   $defaultdomain = $::nullmailer::defaultdomain,
   $remotes = $::nullmailer::remotes,
   $me = $::nullmailer::me,
+  $servicegroup = $::nullmailer::servicegroup,
 ) {
   File {
     ensure => 'file',
@@ -38,8 +42,16 @@ class nullmailer::config (
     content => "${defaultdomain}\n";
   }
 
-  file { '/etc/nullmailer/remotes':
-    content => template('nullmailer/remotes.erb');
+  if $servicegroup and $servicegroup != '' {
+    file { '/etc/nullmailer/remotes':
+      group   => $servicegroup,
+      mode    => '0640',
+      content => template('nullmailer/remotes.erb');
+    }
+  } else {
+    file { '/etc/nullmailer/remotes':
+      content => template('nullmailer/remotes.erb');
+    }
   }
 
   file { '/etc/mailname':
