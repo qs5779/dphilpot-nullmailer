@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'nullmailer::config' do
-  on_supported_os.each do |os, facts|
+  on_supported_os.each do |_os, _facts|
     context 'with inherited parameters' do
       let :pre_condition do
         'class { "nullmailer":
@@ -83,12 +83,12 @@ describe 'nullmailer::config' do
           .with_group('root')
           .with_mode('0644')
           .with_content("someone@localhost\n")
-          is_expected.to contain_file('/etc/nullmailer/remotes')
-            .with_ensure('file')
-            .with_owner('root')
-            .with_group('mail')
-            .with_mode('0640')
-            .with_content("127.0.0.1\n")
+        is_expected.to contain_file('/etc/nullmailer/remotes')
+          .with_ensure('file')
+          .with_owner('root')
+          .with_group('mail')
+          .with_mode('0640')
+          .with_content("127.0.0.1\n")
       end
     end
   end
