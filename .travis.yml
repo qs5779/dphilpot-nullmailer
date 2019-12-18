@@ -1,11 +1,10 @@
 ---
 dist: xenial
 language: ruby
-cache: bundler
+# cache: bundler # see https://stackoverflow.com/questions/55941411/travis-builds-on-ruby-2-6-3-have-bundler-version-mismatch
 before_install:
   - bundle -v
   - rm -f Gemfile.lock
-  - gem update bundler # see https://stackoverflow.com/questions/55941411/travis-builds-on-ruby-2-6-3-have-bundler-version-mismatch
   - gem update --system $RUBYGEMS_VERSION
   - gem --version
   - bundle -v
