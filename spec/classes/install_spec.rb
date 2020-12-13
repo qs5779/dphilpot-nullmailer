@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'nullmailer::install' do
-  on_supported_os.each do |os, facts|
+  on_supported_os.each do |_os, _facts|
     let :params do
       {
         'package_ensure' => 'installed',
